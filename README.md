@@ -130,3 +130,22 @@ Local app data
 
 
 
+App runing:
+
+Logiin:
+![WhatsApp Image 2026-03-01 at 5 21 47 PM](https://github.com/user-attachments/assets/d5fda262-1b0e-4aff-a847-2f9d601a3e5c)
+![WhatsApp Image 2026-03-01 at 5 21 54 PM](https://github.com/user-attachments/assets/1bfc1ceb-527b-4d79-a9d2-c597538b5287)
+
+Products and categories:
+![WhatsApp Image 2026-03-01 at 5 21 54 PM](https://github.com/user-attachments/assets/bfa64b0b-a646-4024-812e-654e717ba601)
+![WhatsApp Image 2026-03-01 at 5 22 13 PM](https://github.com/user-attachments/assets/965fd48c-f485-47ac-980e-6b027f8e5843)
+
+Cart and detail:
+![WhatsApp Image 2026-03-01 at 5 22 36 PM](https://github.com/user-attachments/assets/1807f8a5-1c3e-447f-902a-37482090b5cf)
+![WhatsApp Image 2026-03-01 at 5 22 54 PM](https://github.com/user-attachments/assets/b6a46f9e-2910-4671-a789-e271745863ab)
+
+
+
+
+
+
