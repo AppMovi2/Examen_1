@@ -1,97 +1,132 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Fake Store App - Exam 1
 
-# Getting Started
+## 📱 App Summary
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Fake Store App is a mobile application developed with **React Native** that simulates a simple e-commerce system.
 
-## Step 1: Start Metro
+The application allows users to:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Create a local user account
+- Login using local storage (AsyncStorage)
+- View products from FakeStore API
+- Filter products by categories
+- Open product detail screen
+- Add products to a shopping cart
+- Calculate subtotal and total prices
+- Remove products or clear the cart
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+The project uses Redux Toolkit for state management and Axios for API requests.
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+## 🧱 Technologies Used
 
-## Step 2: Build and run your app
+- React Native
+- Redux Toolkit
+- Axios
+- React Navigation
+- AsyncStorage
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
+## ⚙️ Installation
 
-```sh
-# Using npm
-npm run android
+Open a terminal in the project folder and run:
 
-# OR using Yarn
-yarn android
-```
+```bash
+npm install
 
-### iOS
+##▶️ Run the Application
+Start Metro Bundler:
+npx react-native start --reset-cache
+Open another terminal and run:
+npx react-native run-android
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+##📲 Running on Physical Device (Optional)
+Enable Developer Options on Android
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
 
-```sh
-bundle install
-```
+Enable USB Debugging
 
-Then, and every time you update your native dependencies, run:
 
-```sh
-bundle exec pod install
-```
+Connect device with USB
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-```sh
-# Using npm
-npm run ios
+Run:
 
-# OR using Yarn
-yarn ios
-```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+adb devices
+adb reverse tcp:8081 tcp:8081
+npx react-native run-android
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+##🧭 How the App Works
+1. User Registration
+User enters username and password.
 
-## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
+Data is stored locally using AsyncStorage.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+2. Login
+App validates credentials saved locally.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
 
-## Congratulations! :tada:
+If correct, user enters the app.
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+3. Products Screen
+Products are loaded from FakeStore API.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
 
-# Troubleshooting
+Shows product name and price.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+Products can be filtered by category.
 
-To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+4. Product Detail
+Displays product information.
+
+
+Allows adding product to cart.
+
+
+5. Shopping Cart
+Displays selected products.
+
+
+Shows quantity, subtotal and total.
+
+
+Allows removing items or clearing cart.
+
+
+Payment button is simulated.
+
+
+
+##🧠 State Management
+Redux Toolkit is used to manage:
+Products and categories
+
+
+Shopping cart state
+
+
+Main slices:
+productsSlice
+
+
+cartSlice
+
+
+
+##💾 Local Storage
+AsyncStorage is used to save:
+User credentials
+
+
+Local app data
+
+
+

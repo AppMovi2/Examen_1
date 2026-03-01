@@ -1,45 +1,70 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+// ==================================================
+// MAIN APP COMPONENT
+// Entry point of the application.
+//
+// Responsibilities:
+// - Wraps the app with Redux Provider
+// - Handles navigation container
+// - Controls login state
+// - Loads main screens after authentication
+// ==================================================
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import React, { useState, useEffect } from 'react';
+import { Provider, useDispatch } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { store } from './src/redux/store';
+import { addToCart } from './src/redux/cartSlice';
+
+import Login from './src/views/Login';
+import AppNavigator from './src/navigation/AppNavigator';
+
+const MainApp = () => {
+
+  const [token, setToken] = useState('');
+  const dispatch = useDispatch();
+
+  // 🔥 CARGAR carrito desde localStorage
+  useEffect(() => {
+
+    const loadCart = async () => {
+
+      const saved = await AsyncStorage.getItem('cart');
+
+      if (saved) {
+        const parsed = JSON.parse(saved);
+
+        parsed.forEach((item:any) => {
+          dispatch(addToCart(item));
+        });
+      }
+    };
+
+    loadCart();
+
+  }, []);
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <NavigationContainer>
+
+      {token.length > 0 ? (
+        <AppNavigator />
+      ) : (
+        <Login onLogin={(_:any, tk:any)=>setToken(tk)} />
+      )}
+
+    </NavigationContainer>
   );
-}
+};
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
+const App = () => {
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
+    <Provider store={store}>
+      <MainApp />
+    </Provider>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
