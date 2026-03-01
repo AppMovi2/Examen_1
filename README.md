@@ -1,39 +1,42 @@
-# 🛒 Fake Store App - Exam 1
+🛒 Fake Store App - Exam 1
+📱 Overview
 
-## 📱 Overview
+Fake Store App is a mobile application built with React Native that simulates a simple e-commerce system.
 
-Fake Store App is a mobile application built with **React Native** that simulates a basic e-commerce experience.
+Main Features
 
-The application allows users to:
+Local user registration (AsyncStorage)
 
-- Create a local user account
-- Login using local storage (AsyncStorage)
-- View products from FakeStore API
-- Filter products by category
-- View product details
-- Add products to a shopping cart
-- Calculate subtotal and total
-- Remove products or clear the cart
+Login using local storage
 
----
+Products from FakeStore API
 
-## 🧱 Technologies Used
+Category filtering
 
-- React Native
-- Redux Toolkit
-- Axios
-- React Navigation
-- AsyncStorage
+Product detail screen
 
----
+Shopping cart
 
-## ⚙️ Installation
+Subtotal and total calculation
 
-Open a terminal inside the project folder and run:
+🧱 Technologies Used
 
-```bash
+React Native
+
+Redux Toolkit
+
+Axios
+
+React Navigation
+
+AsyncStorage
+
+⚙️ Installation
+
+Open a terminal inside the project folder:
+
 npm install
-▶️ Run the Application
+▶️ Run the App
 
 Start Metro Bundler:
 
@@ -44,92 +47,71 @@ Open another terminal and run:
 npx react-native run-android
 📱 Running on Physical Device (Optional)
 
-Enable Developer Options on Android
-
-Enable USB Debugging
-
-Connect device via USB
-
-Run:
+Enable USB Debugging and run:
 
 adb devices
 adb reverse tcp:8081 tcp:8081
 npx react-native run-android
-🧭 App Flow (How it Works)
-🔐 1. Register User
+🧭 App Flow
+1️⃣ Register User
 
-Enter username and password.
+Enter username and password
 
-Press Create User.
+Press Create User
 
-Data is saved locally using AsyncStorage.
+Data is saved locally
 
-🔓 2. Login
+2️⃣ Login
 
-Enter saved credentials.
+Enter saved credentials
 
-Press Sign In.
+Press Sign In
 
-User enters the main app.
+3️⃣ Products Screen
 
-🛍️ 3. Products Screen
+Products are loaded from FakeStore API
 
-Products are loaded from FakeStore API.
+Category filter available
 
-Shows title and price.
+4️⃣ Product Detail
 
-Products can be filtered by categories.
+Shows product information
 
-📦 4. Product Detail
+Add to cart button
 
-Shows product information.
+5️⃣ Shopping Cart
 
-Allows adding product to cart.
+Shows selected products
 
-🛒 5. Shopping Cart
+Calculates total
 
-Displays selected products.
-
-Calculates subtotal and total.
-
-Allows removing items or clearing cart.
-
-Payment button is simulated.
+Remove or clear cart
 
 🧠 State Management
 
-Redux Toolkit is used to manage:
+Redux Toolkit manages:
 
-Products state (productsSlice)
+productsSlice
 
-Cart state (cartSlice)
+cartSlice
 
 💾 Local Storage
 
-AsyncStorage is used to store:
+AsyncStorage stores:
 
 User credentials
 
 Local app data
 
-📸 Screenshots
+Images
+![WhatsApp Image 2026-03-01 at 5 21 47 PM](https://github.com/user-attachments/assets/454d8aa1-bb07-420e-a2e0-421719ef324e)
+![WhatsApp Image 2026-03-01 at 5 21 54 PM](https://github.com/user-attachments/assets/db0fa9d3-ff65-4d2a-ad7b-cc86972e9954)
+![WhatsApp Image 2026-03-01 at 5 22 06 PM](https://github.com/user-attachments/assets/fba7fca9-2a0a-4d50-b86d-b0e1126c08f0)
+![WhatsApp Image 2026-03-01 at 5 22 13 PM](https://github.com/user-attachments/assets/8924f20e-b407-4f1d-8e2a-39fa2d76cb2a)
+![WhatsApp Image 2026-03-01 at 5 22 36 PM](https://github.com/user-attachments/assets/70d1103c-d3c3-46a9-8059-eebea0adab82)
+![WhatsApp Image 2026-03-01 at 5 22 54 PM](https://github.com/user-attachments/assets/7da9d79f-8b91-49e1-b4f3-d15f8c20409e)
 
-Create a folder named:
 
-screenshots/
-
-Add images like:
-
-login.png
-
-products.png
-
-detail.png
-
-cart.png
-
-Example:
 
 👨‍💻 Author
-
-Student Name
+Johel Santiago Mena Benavides 
